@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Arq. Marcos Aguirre | Ingeniería & Arquitectura</title>
+    <meta name="description" content="Portafolio de Ingeniería y Arquitectura...">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+
+    <nav>
+      <div class="logo">A/I</div>
+      <div style="font-size: 0.9rem; letter-spacing: 1px">MENU</div>
+    </nav>
+
+    <header>
+      <div class="reveal">
+        <span class="hero-role">Ingeniero Arquitecto</span>
+        <div class="line-reveal"></div>
+        <h1 class="hero-title">
+          Fusión de Arte <br />
+          <strong>& Precisión Estructural</strong>
+        </h1>
+        <p
+          style="
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-bottom: 2rem;
+          "
+        >
+          Diseñamos espacios que desafían lo convencional, sustentados por la
+          rigurosidad de la ingeniería moderna.
+        </p>
+        <a href="#projects" class="btn-arch">Ver Portafolio</a>
+      </div>
+    </header>
+
+    <section class="stats reveal">
+      <div class="stat-item">
+        <span class="stat-num">12+</span>
+        <span class="stat-label">Años de Experiencia</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">85</span>
+        <span class="stat-label">Proyectos Ejecutados</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Funcionalidad</span>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="section-header reveal">
+        <h2 class="section-title">Obras Seleccionadas</h2>
+        <div class="line-reveal"></div>
+      </div>
+
+      <div class="project-grid">
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop"
+              alt="Casa Residencial"
+            />
+          </div>
+          <div class="project-info">
+            <h3>Residencia brutalista</h3>
+            <p>CDMX, 2023 — Diseño & Cálculo</p>
+          </div>
+        </div>
+
+        <div class="project-card reveal" style="transition-delay: 0.2s">
+          <div class="project-img-wrapper">
+            <img
+              src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2000&auto=format&fit=crop"
+              alt="Edificio Corporativo"
+            />
+          </div>
+          <div class="project-info">
+            <h3>Torre Horizonte</h3>
+            <p>Monterrey, 2022 — Fachada Estructural</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="reveal" style="flex: 1">
+        <h2 class="section-title">Servicios Integrales</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem">
+          Desde el boceto inicial hasta el último cálculo de carga. Ofrezco una
+          visión holística donde la estética nunca compromete la seguridad.
+        </p>
+        <a href="#" class="btn-arch">Cotizar Proyecto</a>
+      </div>
+
+      <div class="service-list">
+        <div class="service-item reveal">
+          <span class="service-num">01</span>
+          <span class="service-name">Diseño Arquitectónico</span>
+        </div>
+        <div class="service-item reveal" style="transition-delay: 0.1s">
+          <span class="service-num">02</span>
+          <span class="service-name">Cálculo Estructural</span>
+        </div>
+        <div class="service-item reveal" style="transition-delay: 0.2s">
+          <span class="service-num">03</span>
+          <span class="service-name">Gestión de Obra (DRO)</span>
+        </div>
+        <div class="service-item reveal" style="transition-delay: 0.3s">
+          <span class="service-num">04</span>
+          <span class="service-name">Consultoría BIM</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="contact-info">
+        <p>Hablemos de tu próximo proyecto</p>
+        <a href="mailto:contacto@arq.com" class="contact-email"
+          >ejemplo@arquitecto.com</a
+        >
+      </div>
+      <div style="text-align: right; color: #444">
+        <p>CDMX</p>
+        <p>&copy; 2025 Arq. Marcos Aguirre</p>
+      </div>
+    </footer>
+
+    <script>
+      // Animaciones de Scroll (Reveal)
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          threshold: 0.15,
+          rootMargin: "0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+
+              // Si hay una línea decorativa dentro, activarla también
+              const line = entry.target.querySelector(".line-reveal");
+              if (line) line.classList.add("active");
+            }
+          });
+        }, observerOptions);
+
+        const revealElements = document.querySelectorAll(".reveal");
+        revealElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>
